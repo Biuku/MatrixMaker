@@ -8,25 +8,29 @@ class Node(GraphObject):
     def __init__(self, win, coords, blob = False):
         super().__init__(win)
         self.radius = 20
-        self.colour = self.set.light_grey
+        #self.colour = self.set.light_grey
+        self.colour = self.set.purple
         self.hover_colour = self.set.blue
         self.hover_margin = self.radius * 1.2
 
-        self.is_blob = blob
+        self.blob_status = blob
         self.blob_radius = 10
 
         self.coords = coords
 
 
     def draw(self):
-        colour = self.get_draw_colour()
+        fill_colour = self.get_draw_colour()
         radius = self.get_radius()
 
-        pygame.draw.circle(self.win, colour, self.coords, radius, 0)
+        pygame.draw.circle(self.win, fill_colour, self.coords, radius, 0)
+
+        if not self.is_blob():
+            pygame.draw.circle(self.win, self.set.dark_grey, self.coords, radius+1, 2)
 
 
     def get_radius(self):
-        if self.is_blob:
+        if self.is_blob():
             return self.blob_radius
 
         return self.radius
@@ -62,6 +66,5 @@ class Node(GraphObject):
 
 
     """ BLOB STUFF """
-    def get_is_blob(self):
-        return self.is_blob
-    
+    def is_blob(self):
+        return self.blob_status

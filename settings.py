@@ -11,10 +11,11 @@ class Settings:
         self.win_h = 800
 
         ## google > rgb colour selector
-        self.white, self.black = (255, 255, 255), (0, 0, 0),
-        self.light_grey, self.grey, self.dark_grey = (200, 200, 200), (100,100,100), (75, 75, 75)
+        self.white, self.black = (255, 255, 255), (0, 0, 0)
+        self.light_grey, self.grey, self.dark_grey = (200, 200, 200), (100,100,100), (45, 45, 45)
         self.blue, self.grey_blue = (164, 150, 255), (13, 0, 94)
-        self.purple, self.red = (162, 50, 168), (235, 52, 52)
+        self.purple, self.red = (22, 1, 97), (235, 52, 52)
+        self.green = (35, 130, 60)
 
         ## Font
         self.small_font_size = 10

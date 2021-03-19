@@ -9,26 +9,22 @@ class Helpers:
         self.set = Settings()
         self.win = win
 
-    def check_hovering(self, objects):
-        for object in objects:
-            if object.get_hovering():
-                return True
 
-        return False
-
-    def get_hovering(self, objects):
+    def get_hover_objects(self, objects):
         hovering = []
         for object in objects:
             if object.get_hovering():
                 hovering.append(object)
         return hovering
 
-    def get_moving(self, objects):
+
+    def get_moving_object(self, objects):
         for object in objects:
             if object.get_moving():
                 return object
 
         return False
+
 
     def check_dbclick(self):
         self.set.db_timer = self.set.db_clock.tick()
@@ -41,7 +37,6 @@ class Helpers:
 
     def print_instructions(self):
 
-        # Find a spot at top-right
         x = self.set.win_w * 0.82 ## lower number --> leftward
         y = self.set.win_h * 0.04 ## lower number --> upward
 
